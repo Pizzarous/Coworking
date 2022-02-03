@@ -1,15 +1,18 @@
 .footerStyle {
-    background-color: #FF6B6B;
+    background-color: #65655E;
     color: white;
-    width: 100vw;
+    min-width: 100%;
+    max-width: 100vw;
     display: flex;
-    height: 56px;
+    min-height: 56px;
     align-items: center;
+    z-index: 99999;
 }
 
 .websiteRights {
     display: flex;
-    min-width: 100vw;
+    min-width: 100%;
+    max-width: 100vw;
     justify-content: center;
     align-content: center;
     align-items: center;

@@ -7,7 +7,8 @@ const Footer = () => {
     <footer className={styles.footerStyle}>
       <Container>
         <Row>
-          <Col className={styles.websiteRights}>Copyright &copy; &lt; SMART^UP /&gt;</Col>
+          <Col className={styles.websiteRights}>Copyright &copy; CO@WORK
+          </Col>
         </Row>
       </Container>
     </footer>
