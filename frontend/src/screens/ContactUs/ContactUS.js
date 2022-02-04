@@ -41,7 +41,6 @@ function ContactUS() {
 
                     <h5>Support Centre</h5>
                     <address>
-                      <p>9999 ST APOLONIA 45</p>
                       <dl>
                         <dt>Telephone</dt>
                         <dd><a href="callto:#">+351 219 999 999</a></dd>

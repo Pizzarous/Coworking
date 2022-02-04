@@ -7,8 +7,8 @@
 }
 
 .textonimage {
-    position: absolute;
-    top: 20%;
+    position: fixed;
+    top: calc(10% + 56px);
     left: 50%;
     width: 470px;
     transform: translate(-50%, -50%);
@@ -16,6 +16,7 @@
     color: white;
     text-align: center;
     text-shadow: 0px 0px 10px black;
+    z-index: -9;
 }
 
 .textonimage h1 {
@@ -112,6 +113,8 @@
     min-width: 100vw;
     padding-bottom: 50px;
     height: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .bottomfaq {
@@ -126,6 +129,7 @@
     flex-wrap: nowrap;
     margin-left: 5%;
     margin-right: 5%;
+    max-width: 80ch;
 }
 
 .bottomfaq h2 {
@@ -140,7 +144,6 @@
 }
 
 .bottomfaq p {
-    width: 80%;
     text-align: justify;
     font-weight: bold;
 }

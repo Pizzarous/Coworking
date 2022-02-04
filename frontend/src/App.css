@@ -98,7 +98,11 @@ a.nav-link:hover {
 }
 
 .form-control {
-  width: 300px;
+  width: 424.38px;
+}
+
+.form-control input {
+  width: 424px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -10,9 +10,9 @@ const Header = () => {
         <>
           <Navbar.Brand href="/">CO@WORK</Navbar.Brand>
           <Nav.Link href="/aboutus">About Us</Nav.Link>
-          <Nav.Link href="/services">Services</Nav.Link>
-          <Nav.Link href="/calendar">Calendar</Nav.Link>
-          <Nav.Link href="/Events">Events</Nav.Link>
+          <Nav.Link href="/#">Services</Nav.Link>
+          <Nav.Link href="/#">Calendar</Nav.Link>
+          <Nav.Link href="/#">Events</Nav.Link>
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav>
               <>

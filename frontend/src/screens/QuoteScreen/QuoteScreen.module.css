@@ -18,3 +18,30 @@
   align-items: center;
   margin: 20px;
 }
+
+.mainwrapper {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mainwrapper form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin: 25px;
+}
+
+.mainwrapper form button {
+  margin: 10px;
+}
+
+
+
+.quote {
+  display: flex;
+  justify-content: center;
+}
