@@ -1,11 +1,10 @@
 import express from "express";
-import { authUser, registerUser } from "../controllers/userControllers.js";
-// import { protect } from "../middlewares/authMiddleware.js";
+import { registerQuote, registerVisit } from "../controllers/userControllers.js";
 
 const router = express.Router()
 
 // Create a Route, API endpoint 
-router.post('/', registerUser)
-router.post('/login', authUser)
+router.post('/', registerQuote)
+router.post('/bookingVisit', registerVisit)
 
 export { router };

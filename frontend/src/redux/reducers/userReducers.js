@@ -1,35 +1,32 @@
 import {
-    USER_LOGIN_FAIL,
-    USER_LOGIN_REQUEST,
-    USER_LOGIN_SUCCESS,
-    USER_LOGOUT,
-    USER_REGISTER_FAIL,
-    USER_REGISTER_REQUEST,
-    USER_REGISTER_SUCCESS
+    USER_VISIT_FAIL,
+    USER_VISIT_REQUEST,
+    USER_VISIT_SUCCESS,
+    USER_QUOTE_FAIL,
+    USER_QUOTE_REQUEST,
+    USER_QUOTE_SUCCESS
   } from "../../constants/userConstants";
   
-  export const userLoginReducer = (state = {}, action) => {
+  export const userVisitReducer = (state = {}, action) => {
     switch (action.type) {
-      case USER_LOGIN_REQUEST:
+      case USER_VISIT_REQUEST:
         return { loading: true };
-      case USER_LOGIN_SUCCESS:
+      case USER_VISIT_SUCCESS:
         return { loading: false, userInfo: action.payload };
-      case USER_LOGIN_FAIL:
+      case USER_VISIT_FAIL:
         return { loading: false, error: action.payload };
-      case USER_LOGOUT:
-        return {};
       default:
         return state;
     }
   };
   
-  export const userRegisterReducer = (state = {}, action) => {
+  export const userQuoteReducer = (state = {}, action) => {
     switch (action.type) {
-      case USER_REGISTER_REQUEST:
+      case USER_QUOTE_REQUEST:
         return { loading: true };
-      case USER_REGISTER_SUCCESS:
+      case USER_QUOTE_SUCCESS:
         return { loading: false, userInfo: action.payload };
-      case USER_REGISTER_FAIL:
+      case USER_QUOTE_FAIL:
         return { loading: false, error: action.payload };
       default:
         return state;

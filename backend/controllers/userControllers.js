@@ -1,102 +1,87 @@
-// const asyncHandler = require('express-async-handler');
-// const User = require('../models/userModel')
-// const { generateToken } = require('../useful/generateToken.js');
 import asyncHandler from "express-async-handler";
 import User from "../models/userModel.js";
-import { generateToken } from "../useful/generateToken.js";
-import { validateName, validateEmail, checkPasswordStrength } from "../useful/functionsRegex.js";
+import { validateName, validateEmail, validatePhoneNumber } from "../useful/functionsRegex.js";
 
-const registerUser = asyncHandler(async (req, res) => {
-    const { name, email, password, passwordConfirmation, acceptsTerms } = req.body;
+const registerQuote = asyncHandler(async (req, res) => {
+    const { name, email, companyName, phoneNumber, moveInDate, peopleNumber, stayDuration, roomType, companySize, additionalInfo, offersAndCommunication } = req.body;
 
-    const nameExists = await User.findOne({ name });
-    const emailExists = await User.findOne({ email });
-    const passwordsMatch = password === passwordConfirmation && checkPasswordStrength(password) === 4;
-    const termsAccepted = acceptsTerms === true;
-
-    if(!nameExists && validateName(name) && validateEmail(email) && !emailExists && passwordsMatch && termsAccepted){
-        const user = await User.create({
-            name,
-            email,
-            password,
-            acceptsTerms,
-        });
+    
+    if(validateEmail(email) && validateName(name) && validatePhoneNumber(phoneNumber)){
+        const user = await User.create(req.body);
         res.status(201)
             .json({
-                message: "Congratulations! Your account has been created successfully!",
                 _id: user._id,
                 name: user.name,
+                companyName: user.companyName,
                 email: user.email,
-                acceptsTerms: user.acceptsTerms,
+                phoneNumber: user.phoneNumber,
+                moveInDate: user.moveInDate,
+                peopleNumber: user.peopleNumber,
+                stayDuration: user.stayDuration,
+                roomType: user.roomType,
+                companySize: user.companySize,
+                additionalInfo: user.additionalInfo,
+                offersAndCommunication: user.offersAndCommunication
             })
     } else {
         if(name.length == 0){
             res.status(400);
             throw new Error ("Name not found. Please enter your name!")
-        } else if(nameExists) {
-            res.status(400);
-            throw new Error ("The name you entered already exists!")
-        } else if(!validateName(name)) {
-            res.status(400);
-            throw new Error ("The name you entered is not valid! Please try again.")
-        }
+        } 
         if(email.length === 0){
             res.status(400);
             throw new Error("Email not found. Please enter your Email address!")
         } 
-        if(emailExists){
-            res.status(400);
-            throw new Error ("The Email address you entered already exists!")
-        }
         if(!validateEmail(email) && email.length !== 0){
             res.status(400);
             throw new Error ("Please enter a valid Email address!")
         }
-        if(checkPasswordStrength(password) < 4){
-            if(password.length === 0){
-                res.status(400);
-                throw new Error ("Please enter your password!")
-            } else if(password.length < 8){
-                res.status(400);
-                throw new Error ("Your password must contain at least 8 characters!")
-            } else {
-                res.status(400);
-                throw new Error("Your password must contain at least one Uppercase character, one lowercase character, one number and one special character!")
-            }
-        } 
-        if(passwordConfirmation.length === 0){
+        if(phoneNumber.length == 0){
             res.status(400);
-            throw new Error ("Please enter your password again!")
+            throw new Error ("Phone Number not found. Please enter your Phone Number!")
         }
-        if(password !== passwordConfirmation && passwordConfirmation.length !== 0){
+        if(!validatePhoneNumber(phoneNumber) && phoneNumber.length !== 0){
             res.status(400);
-            throw new Error ("Passwords do not match!")
-        }
-        if(!termsAccepted){
-            res.status(400);
-            throw new Error ("Please indicate that you have read and agreed to the Terms and Conditions!")
+            throw new Error ("Please enter a valid Phone Number!")
         }
     }  
     });
 
-    const authUser = asyncHandler(async (req, res) => {
-        const { email, password } = req.body
 
-        const user = await User.findOne({ email });
+    const registerVisit = asyncHandler(async (req, res) => {
+        const { name, email, phoneNumber, additionalInfo } = req.body;
 
-        if(user && (await user.matchPassword(password))) {
-            res.json({
-                _id: user._id,
-                name: user.name,
-                email: user.email,
-                token: generateToken(user._id),
-            });
+        if(validateEmail(email) && validateName(name) && validatePhoneNumber(phoneNumber)){
+            const user = await User.create(req.body);
+            res.status(201)
+                .json({
+                    _id: user._id,
+                    name: user.name,
+                    email: user.email,
+                    phoneNumber: user.phoneNumber,
+                    additionalInfo: user.additionalInfo
+            })
         } else {
-            res.status(400);
-            throw new Error ("Invalid Email or Password!")
+            if(name.length == 0){
+                res.status(400);
+                throw new Error ("Name not found. Please enter your name!")
+            } 
+            if(email.length === 0){
+                res.status(400);
+                throw new Error("Email not found. Please enter your Email address!")
+            } 
+            if(!validateEmail(email) && email.length !== 0){
+                res.status(400);
+                throw new Error ("Please enter a valid Email address!")
+            }
+            if(phoneNumber.length == 0){
+                res.status(400);
+                throw new Error ("Phone Number not found. Please enter your Phone Number!")
+            }
+            if(!validatePhoneNumber(phoneNumber) && phoneNumber.length !== 0){
+                res.status(400);
+                throw new Error ("Please enter a valid Phone Number!")
+            }
         }
     });
-
-    
-// module.exports = { registerUser, authUser };
-export { authUser, registerUser };
+export { registerQuote, registerVisit };

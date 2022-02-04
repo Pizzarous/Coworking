@@ -12,17 +12,11 @@ function validateEmail(email) {
     return EMAIL_REGEX.test(email)
 }
 
-function checkPasswordStrength(password) {
-    if (password.length < 8) return 0;
-    const regexes = [
-        /[a-z]/,
-        /[A-Z]/,
-        /[0-9]/,
-        /[~!@#$%^&*)(+=._-]/
-    ]
-    return regexes
-        .map(re => re.test(password))
-        .reduce((score, t) => t ? score + 1 : score, 0)
+function validatePhoneNumber(phoneNumber) {
+    const PHONE_REGEX = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
+    return PHONE_REGEX.test(phoneNumber)
 }
 
-export { validateName, validateEmail, checkPasswordStrength };
+
+
+export { validateName, validateEmail, validatePhoneNumber };

@@ -1,7 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import LandingPage from './screens/LandingPage/LandingPage';
-import RegisterScreen from './screens/RegisterScreen/RegisterScreen';
+import QuoteScreen from './screens/QuoteScreen/QuoteScreen';
+import VisitScreen from './screens/VisitScreen/VisitScreen';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import './App.css';
@@ -21,9 +22,8 @@ function App() {
             <Route path='/' element={<LandingPage />} />
             <Route path='/aboutus' element={<AboutUs />} />
             <Route path='/contactus' element={<ContactUS />} />
-
-            <Route path='/register' element={<RegisterScreen />} />
-
+            <Route path='/bookingVisit' element={<VisitScreen />} />
+            <Route path='/quote' element={<QuoteScreen />} />
           </Routes>
         </BrowserRouter>
       </div>

@@ -24,10 +24,10 @@ function LandingPage() {
             </div>
             <div className={styles.textWrapper}>
               <div className={styles.buttonContainer}>
-                <Link to="#">
+                <Link to="/quote">
                   <Button className={styles.sendButton}>Request Quote</Button>
                 </Link>
-                <Link to="#">
+                <Link to="/bookingvisit">
                   <Button className={styles.sendButton}>Book Visit</Button>
                 </Link>
               </div>
@@ -111,10 +111,10 @@ function LandingPage() {
               </div>
 
               <div data-aos="zoom-in" className={styles.buttonContainer}>
-                <Link to="#">
+                <Link to="/quote">
                   <Button className={styles.sendButton}>Request Quote</Button>
                 </Link>
-                <Link to="#">
+                <Link to="/bookingvisit">
                   <Button className={styles.sendButton}>Book Visit</Button>
                 </Link>
               </div>
