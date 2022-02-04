@@ -68,21 +68,23 @@ a.nav-link:hover {
 
 
 .navbar-expand {
-  background-color: #65655E;
+  position: fixed;
+  background-color: #37393a;
   z-index: 9999;
+  width: 100vw;
 }
 
 .btn-primary {
-  color: #000;
-  background-color: #c2b7e1;
-  border-color: #65655E;
+  color: #fff;
+  background-color: #6498b3;
+  border: none;
   transition: 300ms;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
   color: #fff;
-  background-color: #e58c8a;
-  border-color: #65655E;
+  background-color: #4da3d1;
+  border: none;
   transform: scale(1.1);
 }
 

@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 import { register } from "../../redux/actions/userActions";
 import MainScreen from "../../components/MainScreen";
-import { useNavigate } from "react-router-dom";
 import styles from "./RegisterScreen.module.css";
 
 function RegisterScreen() {
