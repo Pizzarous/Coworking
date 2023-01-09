@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, BrowserRouter, HashRouter } from 'react-router-dom';
 import LandingPage from './screens/LandingPage/LandingPage';
 import QuoteScreen from './screens/QuoteScreen/QuoteScreen';
 import VisitScreen from './screens/VisitScreen/VisitScreen';
@@ -16,7 +16,8 @@ function App() {
     <div>
       <Header />
       <div className='structure'>
-        <BrowserRouter>
+        {/* <BrowserRouter> */}
+        <HashRouter>
           <Routes>
             <Route path='/' element={<LandingPage />} />
             <Route path='/aboutus' element={<AboutUs />} />
@@ -24,7 +25,8 @@ function App() {
             <Route path='/bookingVisit' element={<VisitScreen />} />
             <Route path='/quote' element={<QuoteScreen />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
+        {/* </BrowserRouter> */}
       </div>
       <Footer />
     </div>
