@@ -1,6 +1,6 @@
 # Coworking
 
-Welcome to the Coworking project! This project was created for a Hackathon with the goal of helping people who have spaces available for coworking to advertise and manage their spaces.
+Welcome to the [Coworking](https://pizzarous.github.io/Coworking/) project! This project was created for a Hackathon with the goal of helping people who have spaces available for coworking to advertise and manage their spaces.
 
 ## Purpose
 
