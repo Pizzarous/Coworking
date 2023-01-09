@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Coworking/static/css/main.4c3b35be.css",
-    "main.js": "/Coworking/static/js/main.92392ae3.js",
+    "main.js": "/Coworking/static/js/main.2f152745.js",
     "static/js/787.b2cf814a.chunk.js": "/Coworking/static/js/787.b2cf814a.chunk.js",
     "index.html": "/Coworking/index.html",
     "main.4c3b35be.css.map": "/Coworking/static/css/main.4c3b35be.css.map",
-    "main.92392ae3.js.map": "/Coworking/static/js/main.92392ae3.js.map",
+    "main.2f152745.js.map": "/Coworking/static/js/main.2f152745.js.map",
     "787.b2cf814a.chunk.js.map": "/Coworking/static/js/787.b2cf814a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4c3b35be.css",
-    "static/js/main.92392ae3.js"
+    "static/js/main.2f152745.js"
   ]
 }
