@@ -48,7 +48,7 @@ function VisitScreen() {
         {
           successMessage ? <div><h1>REQUEST RECEIVED SUCCESFULLY</h1><center><p>WE WILL CONTACT YOU SHORTLY!</p></center></div> :
             <div className={styles.quoteContainer}>
-              <h1>REQUEST A QUOTE</h1>
+              <h1>BOOK A VISIT</h1>
               <div className={styles.loginContainer}>
                 <Form onSubmit={submitHandler}>
                   <Form.Group className={styles.formFields} controlId="name">
